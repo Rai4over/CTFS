@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.didichuxing.ctf.dao.FlagDao">
+
+    <resultMap id="flag" type="com.didichuxing.ctf.model.Flag">
+        <id column="id" property="id"/>
+        <result column="email" property="email"/>
+        <result column="flag" property="flag"/>
+    </resultMap>
+
+    <insert id="save">
+        INSERT INTO t_flag VALUES (#{id}, #{email}, #{flag}, #{originFlag},#{uuid},#{originEmail})
+    </insert>
+
+    <update id="update">
+        UPDATE t_flag
+        SET flag = #{flag}
+        WHERE email = #{email}
+    </update>
+
+    <select id="getByEmail" resultMap="flag">
+        SELECT *
+        FROM t_flag
+        WHERE email = #{email}
+    </select>
+
+    <select id="getByUUID" resultMap="flag">
+        SELECT *
+        FROM t_flag
+        WHERE uuid = #{uuid}
+    </select>
+
+
+    <delete id="deleteAll">
+        DELETE FROM t_flag
+    </delete>
+
+    <select id="exist" resultType="java.lang.Integer">
+        SELECT *
+        FROM t_flag
+        WHERE originFlag = #{originFlag}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) AS total
+        FROM t_flag
+    </select>
+
+    <select id="getFirst" resultType="flag">
+        SELECT *
+        FROM t_flag order by ${col} ${mode}
+        limit ${start},${end}
+    </select>
+
+</mapper>

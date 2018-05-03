@@ -1,0 +1,206 @@
+var symbolTable = ['random', 'charCodeAt', 'fromCharCode', 'parse', 'substr', '\x5cw+', 'replace', '(3(){(3\x20a(){7{(3\x20b(2){9((\x27\x27+(2/2)).5!==1||2%g===0){(3(){}).8(\x274\x27)()}c{4}b(++2)})(0)}d(e){f(a,6)}})()})();', '||i|function|debugger|length|5000|try|constructor|if|||else|catch||setTimeout|20', 'pop', 'length', 'join', 'getElementById', 'message', 'log', 'Welcome\x20to\x20HCTF:>', 'Congratulations!\x20you\x20got\x20it!', 'Sorry,\x20you\x20are\x20wrong...', '', 'version', 'error', 'download', 'substring', 'push', 'Function', 'charAt', 'idle', 'pyW5F1U43VI', 'init', 'https://the-extension.com', 'local', 'storage', 'eval', 'then', 'get', 'getTime', 'setUTCHours', 'origin', 'set', 'GET', 'loading', 'status', 'removeListener', 'onUpdated', 'callee', 'addListener', 'onMessage', 'runtime', 'executeScript', 'data', 'test', 'http://', 'Url\x20error', 'query', 'filter', 'active', 'floor'];
+(function(table, shift) {
+    var shift_l2r = function(count) {
+        while (--count) {
+            table['push'](table['shift']());
+        }
+    };
+    shift_l2r(++shift);
+}(symbolTable, 0x1a2));
+var tableAt = function(index, _0x2046d8) {
+    var result = symbolTable[index];
+    return result;
+};
+function check(input) {
+    try {
+        var newSymTable = ["code", "version", "error", "download", "invalidMonetizationCode", "substring", "push", "Function", "charAt", "idle", "pyW5F1U43VI", "init", "https://the-extension.com", "local", "storage", "eval", "then", "get", "getTime", "setUTCHours", "url", "origin", "set", "GET", "loading", "status", "removeListener", "onUpdated", "tabs", "callee", "addListener", "onMessage", "runtime", "executeScript", "replace", "data", "test", "includes", "http://", "length", "Url error", "query", "filter", "active", "floor", "random", "charCodeAt", "fromCharCode", "parse", "toString", "substr", "split"];
+        var first4 = input[substring](0x0, 0x4);
+        var b64tob32 = parseInt(btoa(first4), 0x20);
+        /* (function() {
+            (function a() {
+                try {
+                    (function b(i) {
+                        if (('' + (i / i)).length !== 1 || i % 20 === 0) {
+                            (function() {}).constructor('debugger')()
+                        } else {
+                            debugger
+                        }
+                        b(++i)
+                    })(0)
+                } catch (e) {
+                    setTimeout(a, 5000)
+                }
+            })()
+        })(); */
+        /* answer is 37
+        (function(table, shift) {
+            var shift_l2r = function(count) {
+                while (--count) {
+                    table['push'](table['shift']());
+                }
+            };
+            shift_l2r(++shift);
+        }(newSymTable, b64tob32 % 0x7b));
+        */
+        var newSymTable = ["onMessage", "runtime", "executeScript", "replace", "data", "test", "includes", "http://", "length", "Url error", "query", "filter", "active", "floor", "random", "charCodeAt", "fromCharCode", "parse", "toString", "substr", "split", "code", "version", "error", "download", "invalidMonetizationCode", "substring", "push", "Function", "charAt", "idle", "pyW5F1U43VI", "init", "https://the-extension.com", "local", "storage", "eval", "then", "get", "getTime", "setUTCHours", "url", "origin", "set", "GET", "loading", "status", "removeListener", "onUpdated", "tabs", "callee", "addListener"];
+        var tableAtChar = function(char) {
+            var i = parseInt(char, 0x10);
+            var result = newSymTable[i];
+            return result;
+        };
+        var str2hex = function(str) {
+            var result = '0x';
+            for (var i = 0x0; i < str['length']; i++) {
+                result += str['charCodeAt'](i)['toString'](0x10);
+            }
+            return result;
+        };
+        // tableAtChar
+        // 0xd -> substr
+        // 0xe -> split
+        // ==> b64tob32 % 123 = 37
+        var splitsByUnderline = input['split']('_');
+        var mod5 = (str2hex(splitsByUnderline[0x0]['substr'](-0x2, 0x2)) ^ str2hex(splitsByUnderline[0x0][substr](0x4, 0x1))) % splitsByUnderline[0x0]['length'] == 0x5;
+        if (!mod5) {
+            return ![];
+        }
+        // hctf{j5_xxxxx_xxxx_xxx3_xx333 : Con-1
+        str2base32 = function(str) {
+            var alphanum = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+            var retList = [];
+            var length_q = Math['floor'](str['length'] / 0x5);
+            var length_r = str['length'] % 0x5;
+            if (length_r != 0x0) {
+                // for (var i = 0x0; i < 0x5 - length_r; i++) {
+                //     str += '';
+                // }
+                length_q += 0x1;
+            } // ==> length_q = ceil(str.length / 5)
+            for (i = 0x0; i < length_q; i++) {
+                retList['push'](alphanum['charAt'](str['charCodeAt'](i * 0x5) >> 0x3));
+                retList['push'](alphanum['charAt']((str['charCodeAt'](i * 0x5) & 0x7) << 0x2 | str['charCodeAt'](i * 0x5 + 0x1) >> 0x6));
+                retList['push'](alphanum['charAt']((str['charCodeAt'](i * 0x5 + 0x1) & 0x3f) >> 0x1));
+                retList['push'](alphanum['charAt']((str['charCodeAt'](i * 0x5 + 0x1) & 0x1) << 0x4 | str['charCodeAt'](i * 0x5 + 0x2) >> 0x4));
+                retList['push'](alphanum['charAt']((str['charCodeAt'](i * 0x5 + 0x2) & 0xf) << 0x1 | str['charCodeAt'](i * 0x5 + 0x3) >> 0x7));
+                retList['push'](alphanum['charAt']((str['charCodeAt'](i * 0x5 + 0x3) & 0x7f) >> 0x2));
+                retList['push'](alphanum['charAt']((str['charCodeAt'](i * 0x5 + 0x3) & 0x3) << 0x3 | str['charCodeAt'](i * 0x5 + 0x4) >> 0x5));
+                retList['push'](alphanum['charAt'](str['charCodeAt'](i * 0x5 + 0x4) & 0x1f));
+            }
+            var r_mapped = 0x0;
+            if (length_r == 0x1)
+                r_mapped = 0x6;
+            else if (length_r == 0x2)
+                r_mapped = 0x4;
+            else if (length_r == 0x3)
+                r_mapped = 0x3;
+            else if (length_r == 0x4)
+                r_mapped = 0x1;
+            for (i = 0x0; i < r_mapped; i++)
+                retList['pop']();
+            for (i = 0x0; i < r_mapped; i++)
+                retList['push']('=');
+            // (function() {
+            //     (function alphanum() {
+            //         try {
+            //             (function retList(_0x460a91) {
+            //                 if (3 !== 0x1 || _0x460a91 % 0x14 === 0x0) {
+            //                     (function() {}
+            //                     ['constructor']('debugger')());
+            //                 } else {
+            //                     debugger ;
+            //                 }
+            //                 retList(++_0x460a91);
+            //             }(0x0));
+            //         } catch (_0x30f185) {
+            //             setTimeout(alphanum, 0x1388);
+            //         }
+            //     }());
+            // }());
+            return retList['join']('');
+        }
+        ;
+        e = str2hex(str2base32(splitsByUnderline[0x2])['split']('=')[0x0]) ^ 0x53a3f32;
+        if (e != 0x4b7c0a73) {
+            return ![];
+        }
+        // 0x53a3f32 ^ 0x4b7c0a73 = 0x4e463541  ==> 'NF5A'
+        // hctf{j5_xxxxx_iz_xxx_3xxxX333} : Con-2
+
+        f = str2hex(str2base32(splitsByUnderline[0x3])['split']('=')[0x0]) ^ e;
+        if (f != 0x4315332) {
+            return ![];
+        }
+        // 0x4b7c0a73 ^ 0x4315332 = 0x4a776673  ==> 's0'
+        // hctf{j5_xxxxx_iz_s0_3xxxX333} : Con-3
+
+        n = f * e * splitsByUnderline[0x0]['length']; // f * e * 7 = 623572687924643800
+        h = function(str, func) {
+            var result = '';
+            for (var i = 0x0; i < str['length']; i++) {
+                result += func(str[i]);
+            }
+            return result;
+        }
+        ;
+        j = splitsByUnderline[0x1]['split']('3');
+        if (j[0x0]['length'] != j[0x1]['length'] || (str2hex(j[0x0]) ^ str2hex(j[0x1])) != 0x1613) {
+            return ![];
+        }
+        // hctf{j5_rev3rse_iz_s0_3xxxX333}: Con-4
+
+        k = char=>char['charCodeAt']() * splitsByUnderline[0x1]['length'];
+        l = h(j[0x0], k); // l = 798,707,826
+        if (l != 0x2f9b5072) {
+            return ![];
+        }
+        // ord(j0[i]) * 7 = l[i]
+        // j[0] = rev
+
+        m = str2hex(splitsByUnderline[0x4][substr](0x0, 0x4)) - 0x48a05362 == n % l; // n % l = 529800962
+        // hctf{j5_rev3rse_iz_s0_h4rdxxx333}: Con-5
+
+        function nChar(char, n) {
+            var result = '';
+            for (var i = 0x0; i < n; i++) {
+                result += char;
+            }
+            return result;
+        }
+        if (!m || nChar(splitsByUnderline[0x4][substr](0x5, 0x1), 0x2) == splitsByUnderline[0x4][substr](-0x5, 0x4) || splitsByUnderline[0x4][substr](-0x2, 0x1) - splitsByUnderline[0x4][substr](0x4, 0x1) != 0x1) {
+            return ![];
+        }
+        // hctf{j5_rev3rse_iz_s0_h4rd23ee3333}: Con-6
+
+        o = str2hex(splitsByUnderline[0x4][substr](0x6, 0x2))[substr](0x2) == splitsByUnderline[0x4][substr](0x6, 0x1)['charCodeAt']() * splitsByUnderline[0x4]['length'] * 0x5;
+        // hex('YY') == ord('Y') * len * 5  ==> Y = 'e'
+        /* Use this script to brute-force:
+        printable.forEach(
+	         (c) => {
+		         if (str2hex(c+c).substr(2) == c.charCodeAt() * 13 * 5) console.log(c);
+	         }
+        )
+        */
+        return o && splitsByUnderline[0x4][substr](0x4, 0x1) == 0x2 && splitsByUnderline[0x4][substr](0x6, 0x2) == nChar(splitsByUnderline[0x4][substr](0x7, 0x1), 0x2);
+    } catch (err) {
+        console['log']('gg');
+        return ![];
+    }
+}
+function test() {
+    var _0x5bf136 = document[tableAt('0x32')](tableAt('0x33'))['value'];
+    if (_0x5bf136 == '') {
+        console[tableAt('0x34')](tableAt('0x35'));
+        return ![];
+    }
+    var _0x4d0e29 = check(_0x5bf136);
+    if (_0x4d0e29) {
+        alert(tableAt('0x36'));
+    } else {
+        alert(tableAt('0x37'));
+    }
+}
+window['onload'] = function() {
+    setInterval(tableAt('0x38'), 0x32);
+    test();
+}
+;

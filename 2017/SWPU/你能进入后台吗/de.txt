@@ -1,0 +1,2 @@
+<!--The #define is xxooaa and LEN is 6-->
+<!--The crypt key is {11132, 468, 392, 1281, 62}-->

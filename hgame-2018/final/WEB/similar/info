@@ -1,0 +1,11 @@
+<?php
+if (FLAG_SIG != 1){
+    die("you can not visit it directly ");
+}
+if ($_SESSION['isadmin'] === '1') {
+    $sql = "select * from flag";
+    $res = sql_query($sql);
+    $data = $res->fetch_array();
+    echo $data['flag'];
+}
+?>

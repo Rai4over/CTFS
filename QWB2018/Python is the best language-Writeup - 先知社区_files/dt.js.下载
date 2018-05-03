@@ -1,0 +1,49 @@
+/**
+ * Created by Admin on 2018/2/8.
+ */
+$(document).ready(function () {
+    var readScreen = $('.read-screen');
+    var readContent = $('.span10 > .content');
+    var toc = $('#toc-container');
+    var tocList = $('#toc');
+    $('#read-only').click(function () {
+        if (readScreen.hasClass('hidden')) {
+            readContent.css('z-index', '200');
+            readScreen.removeClass('hidden');
+            $(this).prop('title', '退出阅读模式').children('img').prop('src', '/forum/static/images/close.png');
+        } else {
+            readScreen.addClass('hidden');
+            readContent.css('z-index', '');
+            $(this).prop('title', '阅读模式').children('img').prop('src', '/forum/static/images/open.png');
+        }
+    });
+    $('#quit-read').click(function () {
+        readScreen.addClass('hidden');
+        readContent.css('z-index', '');
+        $('#read-only').prop('title', '阅读模式').children('img').prop('src', '/forum/static/images/open.png');
+    });
+    tocList.initTOC({
+        selector: 'h2, h3',
+        scope: '#topic_content',
+        overwrite: false,
+        prefix: 'toc'
+    });
+    var top1 = toc.offset().top;
+    $(window).scroll(function () {
+        var win_top = $(this).scrollTop();
+        var top = toc.offset().top;
+        if (win_top >= top) {
+            toc.addClass("sfixed").show();
+            // tocList.children('.high-light').
+        }
+        if (win_top < top1) {
+            toc.removeClass("sfixed").hide();
+        }
+    });
+    function tocCheck() {
+        if ($('#toc').children('ol').children().length === 0) {
+            toc.remove()
+        }
+    }
+    tocCheck()
+});
