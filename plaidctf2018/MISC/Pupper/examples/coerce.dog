@@ -1,2 +1,0 @@
-let x = (5 :> private int) in
-6
