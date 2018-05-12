@@ -1,2 +1,0 @@
-This is a reduced DES, can you recover the key?
-The parity bits can be guessed.
