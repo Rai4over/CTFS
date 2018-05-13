@@ -17,16 +17,15 @@ var_dump(openssl_verify($data, $rsa_sig, $rsa_pub));
 
 $new_key_pair = openssl_pkey_new(array(
     'digest_alg' => "sha512",
-    "private_key_bits" => 1024,
+    "private_key_bits" => 2048,
     "private_key_type" => OPENSSL_KEYTYPE_DSA,
-    "curve_name" => 'prime256v1'
 ));
-openssl_pkey_export($new_key_pair, $dsa_priv);
+openssl_pkey_export($new_key_pair, $rsa2_priv);
 
 $details = openssl_pkey_get_details($new_key_pair);
-$dsa_pub = $details['key'];
+$rsa2_pub = $details['key'];
 
-openssl_sign($data, $dsa_sig, $dsa_priv);
-print "dsa_sig: ".bin2hex($dsa_sig)."\n";
-var_dump(openssl_verify($data, $dsa_sig, $dsa_pub));
-var_dump(openssl_verify($data, $dsa_sig, $rsa_pub));
+openssl_sign($data, $rsa2_sig, $rsa2_priv);
+print "rsa2_sig: ".bin2hex($rsa2_sig)."\n";
+var_dump(openssl_verify($data, $rsa2_sig, $rsa2_pub));
+var_dump(openssl_verify($data, $rsa2_sig, $rsa_pub));

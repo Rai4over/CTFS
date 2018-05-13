@@ -1,9 +1,20 @@
 <?php
-$text = "ECHO ${${system('ls')}}";
-$payload = substr($text, strlen($echo_query));
+$config = array(
+    "private_key_bits" => 4096,
+    "private_key_type" => OPENSSL_KEYTYPE_RSA
+);
 
-print "About to echo: \"$payload\".<br/>";
-echo $payload;
+$res = openssl_pkey_new($config);
+openssl_pkey_export($res, $privKey);
 
+$pubKey = openssl_pkey_get_details($res);
+$pubKey = $pubKey["key"];
 
-// 3c4cd7ed4df5da9357fd37600e35a0439315259eab80a29c5ff8d126662307bce2c75d8d14c0abf7ff5d5eda2a61d862b39ed8b41520a62265f7d2d90d133101bc4ac8100c97c45904588441c2e922d5098e59632214e479d4d0b43fbdf2b2eb1c66e38a5af0c88e940cc757f1311704b1f330e63267690e6c8d4ddd44e710666e15102dab98c0348d5aaaedfabf3c5119c26f1dfb506d482d118295cd1bc490e0c2b1cfd05f5c79f55a9efce7bcb4f21f02d59d3344e89de8acfe0d027137e8ab0dc7e1f05826c1bd3573e1feab0c4bf30f7f11d1f52c08e3e45cae785920c9f0f3c9e995ba078ea0e03ad4cf381db76387581cc4965195be49855e826df229
+$data = 'plaintext data goes here';
+
+openssl_sign($data, $sig, $privKey);
+
+print bin2hex($sig);
+
+var_dump(openssl_verify($data, $sig, $pubKey));
+
