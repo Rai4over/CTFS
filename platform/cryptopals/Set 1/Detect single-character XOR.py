@@ -1,4 +1,5 @@
 import binascii
+import string
 from Crypto.Util.strxor import strxor_c
 
 
@@ -34,28 +35,30 @@ freqs = {
 
 
 def score(s):
-    score = 0
+    counts = {}
+    for i in string.ascii_lowercase + ' ':
+        counts[i] = s.count(i)
+
+    score = 0.0
     for i in s:
         i = i.lower()
         if i in freqs:
-            score += freqs[i]
-    return score/float(len(s))
+            score += freqs[i] * counts[i]
+    return score/len(s)
 
 
 def break_single_xor(data):
-    def key(p):
-        return score(p[1])
-    return max([(i, strxor_c(data, i)) for i in range(0, 256)], key=key)
+    def key(s):
+        return score(s[1])
+    return max([(i, strxor_c(data, i)) for i in range(256)], key=key)
 
 
 def detect_single_xor(data):
-    tmps = [break_single_xor(d)[1] for d in data]
-
-    def key(i):
-        return score(tmps[i])
-    res = max(range(len(tmps)), key=key)
-
-    return (res + 1, tmps[res])
+    def key(s):
+        return score(s[1])
+    tmps = [break_single_xor(binascii.unhexlify(d.strip())) for d in data] 
+    res = max(tmps, key=key)
+    return res
 
 
 with open('4.txt', 'r') as f:
