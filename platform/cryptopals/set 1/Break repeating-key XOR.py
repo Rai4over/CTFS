@@ -1,7 +1,7 @@
 import base64
 import itertools
 import string
-from Crypto.Util.strxor import strxor_c
+from Crypto.Util.strxor import strxor_c, strxor
 
 
 freqs = {
@@ -54,13 +54,6 @@ def break_single_xor(data):
     return max([(i, strxor_c(data, i)) for i in range(256)], key=key)
 
 
-def break_repeat_xor(data, length):
-    blocks = [data[i:i+length] for i in range(0, len(data), length)]
-    transposedBlocks = list(itertools.izip_longest(*blocks, fillvalue=0))
-    key = [break_single_xor(bytes(x))[0] for x in transposedBlocks]
-    return key
-
-
 def get_hamming_distance(x, y):
     return sum([bin(ord(x[i]) ^ ord(y[i])).count('1') for i in range(len(x))])
 
@@ -72,8 +65,22 @@ def get_edit_distance(data, k):
     return sum(scores) / len(scores)
 
 
-data = base64.b64decode(open('6.txt', 'r').read())
+def break_repeat_xor(data, length):
+    blocks = [data[i:i+length] for i in range(0, len(data), length)]
+    transposedBlocks = list(itertools.izip_longest(*blocks, fillvalue=0))
+    key = [break_single_xor(''.join([str(n) for n in x]))[0] for x in transposedBlocks]
+    return ''.join([chr(x) for x in key])
+
+
+def repeat_key_xor(data, key):
+    key = (key * (len(data) / len(key) + 1))[:len(data)]
+    return strxor(data, key)
+
+
+data = base64.b64decode(open('6.txt', 'r').read().replace('\n', ''))
 
 k = min(range(2, 41), key=lambda k: get_edit_distance(data, k))
 print k
-print break_repeat_xor(data, 29)
+key = break_repeat_xor(data, k)
+print key
+print repeat_key_xor(data, key)
